@@ -1,0 +1,30 @@
+<h1>Place an Order!!!</h1>
+
+<ul>
+    {{#each burgers}}
+    <li>
+        <p>
+            {{this.id}}. {{this.burgers}}
+
+            <button data-burgerId="{{this.id}}" class="delOrder">Delete Order!</button>
+        </p>
+    </li>
+    {{/each}}
+</ul>
+
+<h2>Create an Order</h2>
+<form id="createOrder" class="button-size">
+    <textarea type="text" name="order"></textarea>
+    <button type="submit">Save Order!</button>
+</form>
+
+<h2>Update a Order</h2>
+<form id="updateOrder" class="button-size">
+    <select name="id">
+        {{#each burgers}}
+        <option value="{{this.id}}">{{this.burgers}}</option>
+        {{/each}}
+    </select>
+    <textarea type="text" name="order" placeholder="order"></textarea>
+    <button type="submit">Update Order!</button>
+</form>
